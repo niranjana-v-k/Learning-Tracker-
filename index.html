@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#172554">
+<meta name="description" content="Your personal six-month Python backend career tracker">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Python Career Tracker</title>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="brand-icon">Py</div><div><h1>Python Career Tracker</h1><p>Small steps. Strong backend skills.</p></div></div>
+  <button id="notifyBtn" class="outline">🔔 Reminders</button>
+</header>
+<main>
+  <section class="welcome card">
+    <div><span class="eyebrow">YOUR 6-MONTH JOURNEY</span><h2>Become a Python Backend Developer</h2><p>Target: ₹8–12 LPA · Study goal: 2 hours/day</p></div>
+    <div class="ring" id="overallRing"><span id="overallPct">0%</span><small>overall</small></div>
+  </section>
+  <section class="stats">
+    <div class="stat card"><span>🔥</span><strong id="streak">0 days</strong><small>Current streak</small></div>
+    <div class="stat card"><span>✅</span><strong id="doneCount">0</strong><small>Tasks completed</small></div>
+    <div class="stat card"><span>⏱️</span><strong id="hours">0h</strong><small>Study time logged</small></div>
+  </section>
+  <nav class="tabs">
+    <button class="tab active" data-tab="today">Today</button>
+    <button class="tab" data-tab="roadmap">Roadmap</button>
+    <button class="tab" data-tab="progress">Progress</button>
+  </nav>
+  <section id="today" class="panel active">
+    <div class="section-head"><div><span class="eyebrow">DAILY CHECK-IN</span><h2 id="todayTitle">Today's plan</h2></div><span id="dateLabel" class="date"></span></div>
+    <div class="card day-card">
+      <div class="day-progress"><div><b id="dayProgressText">0 of 5 complete</b><small>Do what you can; consistency matters.</small></div><strong id="dayPct">0%</strong></div>
+      <div class="progress-track"><div id="dayBar" class="progress-fill"></div></div>
+      <div id="tasks" class="tasks"></div>
+    </div>
+    <div class="card checkin">
+      <h3>Quick check-in</h3>
+      <label for="minutes">Study time today (minutes)</label>
+      <input id="minutes" type="number" min="0" max="1440" step="5" placeholder="e.g. 90">
+      <label for="blocker">Any blocker? (optional)</label>
+      <select id="blocker"><option value="">No blocker / not selected</option><option>Concept not clear</option><option>Busy with work</option><option>Low energy</option><option>Setup or coding issue</option><option>Need more practice questions</option></select>
+      <label for="notes">What did you learn today?</label>
+      <textarea id="notes" rows="2" placeholder="Write a short note..."></textarea>
+      <button id="saveCheckin" class="primary full">Save today's check-in</button>
+      <p id="saveMsg" class="success" aria-live="polite"></p>
+    </div>
+  </section>
+  <section id="roadmap" class="panel">
+    <span class="eyebrow">24-WEEK PLAN</span><h2>Your roadmap</h2>
+    <p class="muted">Follow in order. The dates are flexible—your learning matters more than the calendar.</p>
+    <div id="roadmapList" class="roadmap"></div>
+  </section>
+  <section id="progress" class="panel">
+    <span class="eyebrow">YOUR CONSISTENCY</span><h2>Progress overview</h2>
+    <div class="card progress-card"><h3>Roadmap completion</h3><div class="progress-track"><div id="roadmapBar" class="progress-fill"></div></div><p id="roadmapText" class="muted">0% complete</p></div>
+    <div class="card progress-card"><h3>Last 7 days</h3><div id="weekChart" class="week-chart"></div><p class="muted">A day counts toward your streak when you complete at least one task.</p></div>
+    <div class="card progress-card"><h3>Recent check-ins</h3><div id="history"></div></div>
+    <button id="exportBtn" class="outline full">Export my progress (JSON)</button>
+    <button id="resetBtn" class="danger full">Reset all progress</button>
+  </section>
+  <footer>Built for your career switch · Learn steadily, apply confidently.</footer>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

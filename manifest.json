@@ -1,0 +1,10 @@
+{
+  "name": "Python Career Tracker",
+  "short_name": "Python Tracker",
+  "description": "Six-month Python backend learning roadmap and progress tracker",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#172554",
+  "icons": []
+}
